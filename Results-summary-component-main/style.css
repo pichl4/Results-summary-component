@@ -1,0 +1,209 @@
+/* # Front-end Style Guide
+## Layout
+The designs were created to the following widths:
+- Mobile: 375px
+- Desktop: 1440px
+## Colors
+### Primary
+- Light red: hsl(0, 100%, 67%)
+- Orangey yellow: hsl(39, 100%, 56%)
+- Green teal: hsl(166, 100%, 37%)
+- Cobalt blue: hsl(234, 85%, 45%)
+
+## Gradients
+
+- Light slate blue (background): hsl(252, 100%, 67%)
+- Light royal blue (background): hsl(241, 81%, 54%)
+
+- Violet blue (circle): hsla(256, 72%, 46%, 1)
+- Persian blue (circle): hsla(241, 72%, 46%, 0)
+### Neutral
+- White: hsl(0, 0%, 100%)
+- Pale blue: hsl(221, 100%, 96%)
+- Light lavender: hsl(241, 100%, 89%)
+- Dark gray blue: hsl(224, 30%, 27%)
+### Notes
+Use transparency to get the colour variations necessary to match the design. Hint: look into using `hsla()`.
+
+## Typography
+### Body Copy
+- Font size (paragraphs): 18px
+### Font
+
+- Family: [Hanken Grotesk](https://fonts.google.com/specimen/Hanken+Grotesk)
+- Weights: 500, 700, 800
+ */
+
+:root {
+	--light-red: hsla(0, 100%, 67%);
+	--orangey-yellow: hsl(39, 100%, 56%);
+	--green-teal: hsl(166, 100%, 37%);
+	--cobalt-blue: hsl(234, 85%, 45%);
+
+	--light-state-blue-background: hsl(252, 100%, 67%);
+	--light-royal-blue-background: hsl(241, 81%, 54%);
+	--violet-blue-circle: hsla(256, 72%, 46%, 1);
+	--persian-blue-circle: hsla(241, 72%, 46%, 0);
+
+	--white: hsl(0, 0%, 100%);
+	--pale-blue: hsl(221, 100%, 96%);
+	--Light-lavender: hsl(241, 100%, 89%);
+	--Dark-gray-blue: hsl(224, 30%, 27%);
+}
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: "Hanken Grotesk", sans-serif;
+}
+body {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: var(--pale-blue);
+	min-height: 100vh;
+}
+.card {
+	width: 650px;
+	border-radius: 2rem;
+	box-shadow: rgba(0, 0, 0, 0.25) 0px 3px 8px;
+	background-color: var(--white);
+}
+.card-container {
+	display: flex;
+	justify-content: space-between;
+}
+.result {
+	width: 50%;
+	padding: 1.5rem 2rem;
+	background: linear-gradient(to bottom, var(--light-state-blue-background), var(--light-royal-blue-background));
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 1rem;
+	border-radius: 2rem;
+}
+.result .title {
+	color: var(--Light-lavender);
+	margin-bottom: 1rem;
+}
+.result .circle {
+	width: 150px;
+	height: 150px;
+	border-radius: 50%;
+	background: linear-gradient(to bottom, var(--violet-blue-circle), var(--persian-blue-circle));
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+.circle h1 {
+	color: var(--white);
+	font-size: 4rem;
+}
+.circle p {
+	color: var(--Light-lavender);
+}
+.result b {
+	color: var(--white);
+	font-size: 1.5rem;
+	margin-top: 1rem;
+}
+.result .info {
+	color: var(--Light-lavender);
+	width: 200px;
+}
+.summary {
+	width: 50%;
+	padding: 1.5rem 2rem;
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+.summary .title {
+	color: black;
+	font-weight: 800;
+}
+.rows {
+	display: flex;
+	flex-direction: column;
+	gap: 0.8rem;
+}
+.row {
+	display: flex;
+	border-radius: 10px;
+	align-items: center;
+	justify-content: space-between;
+	padding: 1rem 0.5rem;
+}
+.row:nth-child(1) {
+	background-color: hsla(0, 100%, 67%, 0.2);
+}
+.row:nth-child(1) .badge b {
+	color: var(--light-red);
+}
+.row:nth-child(2) {
+	background-color: hsla(39, 50%, 56%, 0.2);
+}
+.row:nth-child(2) .badge b {
+	color: var(--orangey-yellow);
+}
+.row:nth-child(3) {
+	background-color: hsla(166, 100%, 37%, 0.2);
+}
+.row:nth-child(3) .badge b {
+	color: var(--green-teal);
+}
+.row:nth-child(4) {
+	background-color: hsla(234, 85%, 45%, 0.2);
+}
+.row:nth-child(4) .badge b {
+	color: var(--cobalt-blue);
+}
+.badge {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+}
+.row p {
+	color: gray;
+}
+.row p b {
+	color: var(--Dark-gray-blue);
+}
+.btn {
+	margin-top: auto;
+	padding: 1rem;
+	border: none;
+	border-radius: 2rem;
+	/* background: var(--Dark-gray-blue); */
+	background: blue;
+	cursor: pointer;
+	font-size: 1rem;
+	color: white;
+}
+/* .btn:hover {
+	background: linear-gradient(to bottom, var(--violet-blue-circle), var(--persian-blue-circle));
+} */
+
+@media screen and(max-width:650px) {
+	body {
+		align-items: flex-start;
+		background-color: white;
+	}
+	.cart {
+		box-shadow: none;
+	}
+	.cart-containar {
+		flex-direction: column;
+	}
+	.result {
+		border-radius: 0 0 1rem 1rem;
+		width: 100%;
+	}
+	.result .info {
+		width: 100%;
+	}
+}
